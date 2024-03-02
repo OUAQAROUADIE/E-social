@@ -2,7 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import  logo from '../images/logo.png'
 import './NavbarCard.css';
 import { NotificationIcon } from 'react-autoql';
@@ -10,9 +9,9 @@ import { CgProfile } from "react-icons/cg";
 
 
 import 'react-autoql/dist/autoql.esm.css'
-function NavbarCard(props) {
+function NavbarCard() {
     return (
-        <Navbar expand="lg" id=" navbar " className={props.darkMode ? "dark" : ""}>
+        <Navbar expand="lg" id=" navbar ">
             <Container fluid>
                 <img className="logo" width={"30px"}  src={logo} alt="Logo" />
                 <Navbar.Brand href="#"></Navbar.Brand>
