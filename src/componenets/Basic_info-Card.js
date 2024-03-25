@@ -11,13 +11,35 @@ function Basic_info_Card() {
         maritalStatus: false,
         address: false
 
-        // Ajoutez d'autres champs ici
-      });    const [gender, setGender] = useState('Male');
-    const [birthDate, setBirthDate] = useState('December 9');
-    const [birthYear, setBirthYear] = useState('2002');
-    const [hometown, setHometown] = useState('From Ouazzane');
-    const [maritalStatus, setMaritalStatus] = useState('Married');
-    const [address, setAddress] = useState('Av. Allal Al Fassi');
+      });     
+      const [gender, setGender] = useState('male');
+      const [birthDate, setBirthDate] = useState('02-05');
+      const [birthYear, setBirthYear] = useState('2002');
+      const [hometown, setHometown] = useState('Rabat');
+      const [maritalStatus, setMaritalStatus] = useState('');
+      const [address, setAddress] = useState('inpt,rabat');
+      const [userData, setUserData] = useState({});
+    
+      useEffect(() => {
+      
+        const fetchUserData = async () => {
+          try {
+            const userId = '65df9af9a8ec6b0a27c42c36';
+            const response = await axios.get(`http://localhost:8080/e-social/users/id/${userId}`);
+            setUserData(response.data); 
+            setGender(response.data.gender);
+            setBirthDate(response.data.birthDate);
+            setBirthYear(response.data.birthYear);
+            setHometown(response.data.hometown);
+            setMaritalStatus(response.data.maritalStatus);
+            setAddress(response.data.address);
+          } catch (error) {
+            console.error('Error fetching user data:', error);
+          }
+        };
+    
+        fetchUserData();
+      }, []);
   
     const handleEditClick = (field) => {
         setIsEditing((prevIsEditing) => ({ ...prevIsEditing, [field]: true }));
@@ -67,13 +89,12 @@ function Basic_info_Card() {
             <h5>Basic Info</h5>
             <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Gender</h6>
           {isEditing.gender ? (
             <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
           ) : (
-            <h6>{gender}</h6>
+            <span>{gender}</span>
           )}
-
-          <span>Gender</span>
         </div>
         {isEditing.gender ? (
           <a className="save-icon" onClick={() => { handleUpdate('gender', gender); handleSaveClick('gender'); }}>Save</a>
@@ -85,13 +106,14 @@ function Basic_info_Card() {
       </div>
       <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Birth Date</h6>
+
           {isEditing.birthDate ? (
             <input type="text" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
           ) : (
-            <h6>{birthDate}</h6>
+            <span>{birthDate}</span>
           )}
 
-          <span>Birth Date</span>
         </div>
         {isEditing.birthDate ? (
           <a className="save-icon" onClick={() => { handleUpdate('birthDate', birthDate); handleSaveClick('birthDate'); }}>Save</a>
@@ -103,13 +125,14 @@ function Basic_info_Card() {
       </div>
       <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Birth Year</h6>
+
           {isEditing.birthYear ? (
-            <input type="text" value={birthDate} onChange={(e) => setBirthYear(e.target.value)} />
+            <input type="text" value={birthYear} onChange={(e) => setBirthYear(e.target.value)} />
           ) : (
-            <h6>{birthYear}</h6>
+            <span>{birthYear}</span>
           )}
 
-          <span>Birth Year</span>
         </div>
         {isEditing.birthYear ? (
           <a className="save-icon" onClick={() => { handleUpdate('birthYear', birthYear); handleSaveClick('birthYear'); }}>Save</a>
@@ -121,13 +144,15 @@ function Basic_info_Card() {
       </div>
       <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Hometown</h6>
+
           {isEditing.hometown ? (
             <input type="text" value={hometown} onChange={(e) => setHometown(e.target.value)} />
           ) : (
-            <h6>{hometown}</h6>
+            <p>{hometown}</p>
           )}
 
-          <span>Hometown</span>
+          
         </div>
         {isEditing.hometown ? (
           <a className="save-icon" onClick={() => { handleUpdate('hometown', hometown); handleSaveClick('hometown'); }}>Save</a>
@@ -139,13 +164,14 @@ function Basic_info_Card() {
       </div>
       <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Marital Status</h6>
+
           {isEditing.maritalStatus ? (
             <input type="text" value={maritalStatus} onChange={(e) => setMaritalStatus(e.target.value)} />
           ) : (
-            <h6>{maritalStatus}</h6>
+            <p>{maritalStatus}</p>
           )}
 
-          <span>Marital Status</span>
         </div>
         {isEditing.maritalStatus ? (
           <a className="save-icon" onClick={() => { handleUpdate('maritalStatus', maritalStatus); handleSaveClick('maritalStatus'); }}>Save</a>
@@ -157,13 +183,14 @@ function Basic_info_Card() {
       </div>
       <div className="mt-4 d-flex justify-content-between info_part">
         <div className="info">
+        <h6>Adress</h6>
+
           {isEditing.address ? (
             <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
           ) : (
-            <h6>{address}</h6>
+            <p>{address}</p>
           )}
 
-          <span>Address</span>
         </div>
         {isEditing.address ? (
           <a className="save-icon" onClick={() => { handleUpdate('address', address); handleSaveClick('address'); }}>Save</a>

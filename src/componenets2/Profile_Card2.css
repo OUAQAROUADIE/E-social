@@ -49,9 +49,9 @@
 a{
     color: black;
     text-decoration: none;
-}
+}  
 
-/* Ajoutez des règles de média requêtes pour les ajustements de style en fonction de la taille de l'écran */
+  
 @media screen and (max-width: 600px) {
     .edit-background {
         right: 3%; /* Par exemple, ajustez la position pour les écrans plus petits */
@@ -63,6 +63,9 @@ background-color: #FFA462;
     width: 50%;
     margin-right: 20%;
 }
+.btn.clicked {
+    background-color: #28a745; /* Couleur après le clic */
+  }
 .btns{
     margin-right: 10%;
     margin-top: -5%;

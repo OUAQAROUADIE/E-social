@@ -13,13 +13,13 @@ function Basic_info_Card2() {
             <div className="mt-3 d-flex justify-content-between info_part">
                 <div className="info">
                     <h6>December 9</h6>
-                    <span>Birth date</span>
+                    <p>Birth date</p>
                 </div>
             </div>
             <div className="mt-3 d-flex justify-content-between info_part">
                 <div className="info">
                     <h6>2002</h6>
-                    <span>Birth year</span>
+                    <p>Birth year</p>
                 </div>
             </div>
             <div className="mt-3 d-flex justify-content-between info_part">
@@ -31,13 +31,13 @@ function Basic_info_Card2() {
             <div className="mt-3  d-flex justify-content-between info_part">
                 <div className="info">
                     <h6>Married</h6>
-                    <span>marital status</span>
+                    <p>marital status</p>
                 </div>
             </div>
             <div className="mt-3  d-flex justify-content-between info_part">
                 <div className="info">
                     <h6>Av. Allal Al Fassi</h6>
-                    <span>address</span>
+                    <p>address</p>
                 </div>
             </div>
         </div>

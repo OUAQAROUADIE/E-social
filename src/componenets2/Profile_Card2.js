@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import back from "../images/PR1497_FamilyRoadTrip_Banner.jpg"
 import profile from "../images/Jim_Spiegel.jpg"
 import './Profile_Card2.css'
 
 function Profile_Card2() {
+    const [clicked, setClicked] = useState(false);
+
+    const handlClick = ()  => {
+        setClicked(true);
+    }
     return (
         <div className="first_card ">
             <div className="profile_back">
@@ -20,8 +25,8 @@ function Profile_Card2() {
                     <span>Rabat,Morocco</span>
                     </div>
                     <div className=" btns d-flex justify-content-center">
-                         <button className="btn">S'abonner</button>
-                         <button className="btn">Message</button>
+                         <button onClick={handlClick} className="btn abonner-button">S'abonner</button>
+                         <button className="btn ">Message</button>
                     </div>
                 </div>
             </div>

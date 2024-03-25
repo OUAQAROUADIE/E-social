@@ -2,6 +2,10 @@
     background-color: #F4FDFF;
     border-radius: 10px;
     padding-top: 50px;
+    width: 15%;
+    padding-right:-100%;
+}
+.menuItem{
 }
 
 
@@ -10,8 +14,8 @@
         .menu {
                 width: 70px;
                         /* Cache le texte et affiche seulement l'icône */
-
-            .pro-menu-item-content {
+-   
+        .pro-menu-item-content {
                 display: none;
             }
         }

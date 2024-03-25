@@ -41,9 +41,7 @@
     margin-top: -4%;
     line-height: 0.3;
 }
-.Name span{
-    margin-left: 10%;
-}
+
 .edit-background {
     margin-top: -6%;
     margin-left: 2%;
@@ -65,11 +63,41 @@ a{
     color: black;
     text-decoration: none;
 }
+.info2{
+    flex-wrap: wrap; 
+    width: 250px;
+}
+.info_part{
+    margin-left: 10%;
+}
+.icon-edit-username{
+    margin-left: -600%;
+    margin-top: -30%;
+}
 
 /* Ajoutez des règles de média requêtes pour les ajustements de style en fonction de la taille de l'écran */
 @media screen and (max-width: 600px) {
     .edit-background {
         right: 3%; /* Par exemple, ajustez la position pour les écrans plus petits */
         margin-top: -8%;
+    }
+    .Titles{
+        justify-content: space-around;
+    }
+    .friends-title{
+        margin-left: -30%;
+    }
+    .username{
+        margin-left: 19%;
+    }
+    .icon-edit-username{
+        margin-left: -350%;
+        margin-top: -30%;
+    }
+    .save-username{
+        background-color: blue;
+        margin-left: -150%;
+        margin-top: -10%;
+        
     }
 }

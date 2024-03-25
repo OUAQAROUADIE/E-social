@@ -1,6 +1,6 @@
 // LeftMenu.js
 import React from 'react';
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { Menu, MenuItem } from 'react-pro-sidebar';
 import {AiFillMessage} from "react-icons/ai";
 import {FaUserFriends} from "react-icons/fa";
 
